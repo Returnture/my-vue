@@ -45,7 +45,22 @@ export default {
     },
     created () {
         console.log(1111111111111111);
-    }
+        alert(this.formatDateTime(new Date()));
+    },
+    methods: {
+        formatDateTime(date){
+            var y = date.getFullYear();
+            var m = date.getMonth() + 1;
+            m = m < 10 ? ('0' + m) : m;
+            var d = date.getDate();
+            d = d < 10 ? ('0' + d) : d;
+            var h = date.getHours();
+            var minute = date.getMinutes();
+            var seconds = date.getSeconds();
+            minute = minute < 10 ? ('0' + minute) : minute;
+            return y + '-' + m + '-' + d + ' ' + h + ':' + minute + ':' + seconds;
+        }
+    },
     // directives: {
     //     focus: {
     //         // 指令的定义
