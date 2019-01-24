@@ -44,8 +44,6 @@ export default {
         anchoredHeading
     },
     created () {
-        console.log(1111111111111111);
-        alert(this.formatDateTime(new Date()));
     },
     methods: {
         formatDateTime(date){

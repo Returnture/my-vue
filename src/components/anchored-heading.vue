@@ -3,8 +3,7 @@
         <!-- <h1>
             <a name="hello-world" href="#hello-world">Hello world!</a>
         </h1> -->
-        <div class="a">qqqqqqqqqqqqq</div>
-        <img :src="`${a}${b}`" alt="">
+        <div class="a">{{aaa}}</div>
     </div>
 </template>
 
@@ -13,7 +12,7 @@ export default {
     name: 'anchored-heading',
     data () {
         return {
-            a:'aaa',
+            a:'ccc',
             b:'bbb'
         }
     },
@@ -27,6 +26,12 @@ export default {
         level: {
             type: Number,
             required: true
+        }
+    },
+    computed:{
+        aaa(){
+            console.log(this.a);
+            return this.a
         }
     },
     created () {
