@@ -30,12 +30,12 @@ export default {
     },
     computed:{
         aaa(){
-            console.log(this.a);
+            // console.log(this.a);
             return this.a
         }
     },
     created () {
-        console.log(this.level);
+        // console.log(this.level);
     }
     // directives: {
     //     focus: {
