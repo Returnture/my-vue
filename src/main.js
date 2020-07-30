@@ -10,7 +10,7 @@ Vue.use(ElementUI);
 Vue.config.productionTip = false
 Vue.config.silent = true
 
-console.log(Vue.config);
+// console.log(Vue.config);
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

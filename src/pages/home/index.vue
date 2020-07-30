@@ -1,46 +1,40 @@
 <template>
     <div class="home">
-        <search-box>
-            <div slot="search-input"><input class="input-contain" placeholder="搜索" type="text" value="搜索"></div>
-        </search-box>
+        <ChildNode :age="age" :love="love" :address="address" name="aaa" data="1"></ChildNode>
     </div>
 </template>
 
 <script>
-import searchBox from '@/components/search-box'
+import ChildNode from "./ChildNode";
 export default {
-    name: 'home',
-    data () {
+    name: "home",
+    data() {
         return {
-
-        }
+            age: "21",
+            love: "Chen",
+            address: "xinan"
+        };
     },
-    props: {
-
+    props: {},
+    components: {
+        ChildNode
     },
-    components:{
-        searchBox
-    },
-    computed:{
-
-    },
-    created () {
-
-    },
+    computed: {},
+    created() {},
     methods: {
-        onClick(event){
-            this.$emit('onClicked',{
-                event:event
+        onClick(event) {
+            this.$emit("onClicked", {
+                event: event
             });
         }
-    },
-}
+    }
+};
 </script>
 
 <style scoped>
-    .input-contain{
-        width: 100%;
-        height: 46px;
-        border: 1px solid #999;
-    }
+.input-contain {
+    width: 100%;
+    height: 46px;
+    border: 1px solid #999;
+}
 </style>
