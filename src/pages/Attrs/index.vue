@@ -1,5 +1,5 @@
 <template>
-    <div class="home">
+    <div class="Attrs">
         <ChildNode :age="age" :love="love" :address="address" name="aaa" data="1"></ChildNode>
     </div>
 </template>
@@ -7,7 +7,7 @@
 <script>
 import ChildNode from "./ChildNode";
 export default {
-    name: "home",
+    name: "Attrs",
     data() {
         return {
             age: "21",
