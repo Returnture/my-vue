@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import login from '@/pages/login'
+import Home from '@/pages/Home'
+import Stop from '@/pages/Home/Stop'
 import Attrs from '@/pages/Attrs'
 import Slot from '@/pages/Slot'
 
@@ -13,12 +15,22 @@ const router = new Router({
       component: login
     },
     {
+      path: '/Home/Stop',
+      name: 'Stop',
+      component: Stop
+    },
+    {
+      path: '/',
+      name: 'Home',
+      component: Home
+    },
+    {
       path: '/Attrs',
       name: 'Attrs',
       component: Attrs
     },
     {
-      path: '/',
+      path: '/Slot',
       name: 'Slot',
       component: Slot
     }
