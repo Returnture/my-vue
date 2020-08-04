@@ -29,7 +29,7 @@ export default {
     watch: {},
     methods: {},
     created() {
-        console.log(this.$attrs);
+        // console.log(this.$attrs);
     },
     mounted() {}
 };
