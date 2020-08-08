@@ -1,7 +1,5 @@
 <template>
     <div class="Home">
-        <!-- <ItemRef ref="refItem"></ItemRef> -->
-        {{$store.state.name}}
         <ul class="list">
             <li v-for="item in list" :key="item.name" @click="routerTo(item)">{{item.name}}</li>
         </ul>
@@ -9,19 +7,18 @@
 </template>
 
 <script>
-import ItemRef from "./RefItem";
 export default {
     data() {
         return {
             list: [
                 { name: "Vuex", to: "Vuex" },
-                { name: "Directive", to: "Focus" },
+                { name: "Slot", to: "Slot" },
+                { name: "Focus", to: "Focus" },
+                { name: "Attrs", to: "Attrs" },
             ],
         };
     },
-    components: {
-        ItemRef,
-    },
+    components: {},
     created() {},
     mounted() {},
     methods: {
