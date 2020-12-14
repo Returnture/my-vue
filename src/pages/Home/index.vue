@@ -14,6 +14,7 @@ export default {
         return {
             list: [
                 { name: "Vuex", to: "Vuex" },
+<<<<<<< HEAD
                 { name: "Directive", to: "Focus" },
                 { name: "Refs", to: "Refs" },
                 { name: "Attrs", to: "Attrs" },
@@ -23,6 +24,11 @@ export default {
                 { name: "Swiper", to: "Swiper" },
                 { name: "Form", to: "Form" },
                 { name: "全选反选", to: "CheckAll" }
+=======
+                { name: "Slot", to: "Slot" },
+                { name: "Focus", to: "Focus" },
+                { name: "Attrs", to: "Attrs" },
+>>>>>>> 1b0a9a91bfd71b2e0a2caa031f6c2235e4e850a9
             ],
             rawHtml: "<span>这是html</span>",
             dataobj: {
