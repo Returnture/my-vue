@@ -1,35 +1,49 @@
 <template>
     <div class="Home">
-        <!-- <ItemRef ref="refItem"></ItemRef> -->
-        {{$store.state.name}}
         <ul class="list">
             <li v-for="item in list" :key="item.name" @click="routerTo(item)">{{item.name}}</li>
         </ul>
+        <div v-html="rawHtml"></div>
+        <div @click="add">{{dataobj.a}}</div>
     </div>
 </template>
 
 <script>
-import ItemRef from "./RefItem";
 export default {
     data() {
         return {
             list: [
                 { name: "Vuex", to: "Vuex" },
                 { name: "Directive", to: "Focus" },
+                { name: "Refs", to: "Refs" },
+                { name: "Attrs", to: "Attrs" },
+                { name: "Slot", to: "Slot" },
+                { name: "CheckBox", to: "CheckBox" },
+                { name: "验证Style和script是否是必须的", to: "ScriptStyle" },
+                { name: "Swiper", to: "Swiper" },
+                { name: "Form", to: "Form" },
+                { name: "全选反选", to: "CheckAll" }
             ],
+            rawHtml: "<span>这是html</span>",
+            dataobj: {
+                a: 1
+            }
         };
     },
-    components: {
-        ItemRef,
-    },
+    components: {},
     created() {},
-    mounted() {},
+    mounted() {
+        
+    },
     methods: {
         routerTo(item) {
             this.$router.push({
                 path: `/${item.to}`,
             });
         },
+        add() {
+            this.dataobj.a = 2
+        }
     },
 };
 </script>
@@ -40,7 +54,7 @@ export default {
 }
 .list li {
     list-style: none;
-    width: 100px;
+    width: 250px;
     height: 30px;
     line-height: 30px;
     background: #666;

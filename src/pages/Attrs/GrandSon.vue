@@ -29,9 +29,11 @@ export default {
     watch: {},
     methods: {},
     created() {
-        // console.log(this.$attrs);
+        
     },
-    mounted() {}
+    mounted() {
+        console.log(this.$attrs);
+    }
 };
 </script>
 <style scoped>

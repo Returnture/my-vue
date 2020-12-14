@@ -7,10 +7,13 @@ import Attrs from '@/pages/Attrs'
 import Slot from '@/pages/Slot'
 import Focus from '@/pages/Directives/Focus'
 import Vuex from '@/pages/Vuex'
+import Refs from '@/pages/Refs'
+import CheckBox from '@/pages/CheckBox'
 
 Vue.use(Router)
 
 const router = new Router({
+  // mode: 'history',
   routes: [{
       path: '/login',
       name: 'login',
@@ -45,6 +48,36 @@ const router = new Router({
       path: '/Vuex',
       name: 'Vuex',
       component: Vuex
+    },
+    {
+      path: '/Refs',
+      name: 'Refs',
+      component: Refs
+    },
+    {
+      path: '/CheckBox',
+      name: 'CheckBox',
+      component: CheckBox
+    },
+    {
+      path: '/ScriptStyle',
+      name: 'ScriptStyle',
+      component: () => import('@/pages/ScriptStyle')
+    },
+    {
+      path: '/Swiper',
+      name: 'Swiper',
+      component: () => import('@/pages/Swiper')
+    },
+    {
+      path: '/Form',
+      name: 'Form',
+      component: () => import('@/pages/Form')
+    },
+    {
+      path: '/CheckAll',
+      name: 'CheckAll',
+      component: () => import('@/pages/CheckAll')
     }
   ]
 })

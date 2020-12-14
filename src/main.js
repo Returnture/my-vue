@@ -8,6 +8,13 @@ import router from './router'
 import store from './store'
 
 Vue.use(ElementUI);
+
+import swiper from 'vue-awesome-swiper'
+ 
+// import style
+import 'swiper/css/swiper.css'
+ 
+Vue.use(swiper, /* { default options with global component } */)
 Vue.config.productionTip = false
 Vue.config.silent = true
 
