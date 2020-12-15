@@ -1,0 +1,162 @@
+@charset "utf-8";
+html {
+    background-color: #fff;
+    color: #000;
+    font-size: 12px
+}
+
+body, ul, ol, dl, dd, h1, h2, h3, h4, h5, h6, figure, form, fieldset, legend, input, textarea, button, p, blockquote, th, td, pre, xmp {
+    margin: 0;
+    padding: 0
+}
+
+body, input, textarea, button, select, pre, tt, code, kbd, samp {
+    line-height: 1.5;
+    font-family: 'Microsoft Yahei', "微软雅黑", tahoma, arial, "Hiragino Sans GB", simsun, sans-serif
+}
+
+h1, h2, h3, h4, h5, h6, small, big, input, textarea, button, select {
+    font-size: 100%
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Microsoft Yahei', "微软雅黑", tahoma, arial, "Hiragino Sans GB", simsun, sans-serif
+}
+
+h1, h2, h3, h4, h5, h6, b, strong {
+    font-weight: normal
+}
+
+address, cite, dfn, em, i, optgroup, var {
+    font-style: normal
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    text-align: left
+}
+
+caption, th {
+    text-align: inherit
+}
+
+ul, ol, menu {
+    list-style: none
+}
+
+fieldset, img {
+    border: 0
+}
+
+img, object, input, textarea, button, select {
+    vertical-align: middle
+}
+
+article, aside, footer, header, section, nav, figure, figcaption, hgroup, details, menu {
+    display: block
+}
+
+audio, canvas, video {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+    content: "\0020"
+}
+
+textarea {
+    overflow: auto;
+    resize: vertical
+}
+
+input, textarea, button, select, a {
+    outline: 0 none;
+    border: none;
+}
+
+button::-moz-focus-inner, input::-moz-focus-inner {
+    padding: 0;
+    border: 0
+}
+
+mark {
+    background-color: transparent
+}
+
+a, ins, s, u, del {
+    text-decoration: none
+}
+
+sup, sub {
+    vertical-align: baseline
+}
+
+html {
+    overflow-x: hidden;
+    height: 100%;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    font-family: PingFang SC;
+    font-weight: 400;
+    color: #2F3856;
+    font-size: 16px;
+    line-height: 1.3em;
+    overflow-x: hidden;
+    -webkit-text-size-adjust: none;
+}
+
+a {
+    color: #25a4bb;
+    text-decoration: none;
+}
+
+article, section, header, div, span, p, i, ul, li, h1, h2, h3, h4, h5, ol {
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    background: rgba(239, 242, 248, 1);
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/*修改滚动条样式*/
+div::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+
+div::-webkit-scrollbar-track {
+    background: #fff;
+    border-radius: 2px;
+}
+
+div::-webkit-scrollbar-thumb {
+    background: #dedede;
+    border-radius: 5px;
+}
+
+div::-webkit-scrollbar-thumb:hover {
+    background: #DDE7F9;
+}
+
+div::-webkit-scrollbar-corner {
+    background: #dedede;
+}
+
+/* 暗夜模式的媒体查询 */
+@media (prefers-color-scheme: dark) {
+
+}

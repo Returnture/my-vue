@@ -29,7 +29,9 @@ export default {
     components: {
         ChildNode,
     },
-    created() {},
+    created() {
+        console.log('------>>>',this.$store);
+    },
     mounted() {},
     methods: {
         Edit() {

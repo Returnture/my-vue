@@ -78,6 +78,16 @@ const router = new Router({
       path: '/CheckAll',
       name: 'CheckAll',
       component: () => import('@/pages/CheckAll')
+    },
+    {
+      path: '/Computed',
+      name: 'Computed',
+      component: () => import('@/pages/Computed')
+    },
+    {
+      path: '/Key',
+      name: 'Key',
+      component: () => import('@/pages/Key')
     }
   ]
 })

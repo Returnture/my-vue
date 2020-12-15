@@ -24,6 +24,8 @@ export default {
                 { name: "Form", to: "Form" },
                 { name: "全选反选", to: "CheckAll" },
                 { name: "Focus", to: "Focus" },
+                { name: "Computed和watch的区别", to: "Computed" },
+                { name: "Key的作用", to: "Key" },
             ],
             rawHtml: "<span>这是html</span>",
             dataobj: {

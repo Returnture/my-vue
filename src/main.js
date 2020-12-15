@@ -13,6 +13,9 @@ import swiper from 'vue-awesome-swiper'
  
 // import style
 import 'swiper/css/swiper.css'
+
+// 全局注册组件
+import './assets/css/base.css'
  
 Vue.use(swiper, /* { default options with global component } */)
 Vue.config.productionTip = false
