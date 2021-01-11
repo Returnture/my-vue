@@ -30,10 +30,19 @@ export default {
         ChildNode,
     },
     created() {
-        console.log('------>>>',this.$store);
+        console.log('------>>>', this.$store);
     },
-    mounted() {},
+    mounted() {
+        window.addEventListener('resize', this.handleChange);
+        this.$once('hook:beforeDestroy', () => {
+            console.log(111);
+            window.removeEventListener('resize', this.handleChange)
+        })
+    },
     methods: {
+        handleChange() {
+            console.log("窗口变化");
+        },
         Edit() {
             this.$store.commit("edit", "这是修改后的值");
         },
@@ -51,7 +60,7 @@ export default {
         },
     },
     watch: {
-        parentValue(newValue){
+        parentValue(newValue) {
             console.log(newValue);
         }
     }

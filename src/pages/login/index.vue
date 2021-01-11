@@ -1,5 +1,5 @@
 <template>
-    <div class="login">
+    <div class="login-box">
         <input type="text" name="" value="" v-focus>
         <input type="text" name="" value="" v-focus>
         <input type="text" name="" value="" v-focus>
@@ -9,17 +9,16 @@
 </template>
 
 <script>
-import vueButton from '@/components/vue-button';
+// import vueButton from '@/components/vue-button';
 
 export default {
-    name: 'login',
     data () {
         return {
 
         }
     },
     components: {
-        vueButton
+        // vueButton
     },
     created () {
     },

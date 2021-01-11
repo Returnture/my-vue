@@ -13,6 +13,7 @@ export default {
     data() {
         return {
             list: [
+                { name: "login", to: "login" },
                 { name: "Vuex", to: "Vuex" },
                 { name: "Directive", to: "Focus" },
                 { name: "Refs", to: "Refs" },
@@ -26,17 +27,28 @@ export default {
                 { name: "Focus", to: "Focus" },
                 { name: "Computed和watch的区别", to: "Computed" },
                 { name: "Key的作用", to: "Key" },
+                { name: "自定义全局组件-loading", to: "Loading" },
             ],
             rawHtml: "<span>这是html</span>",
             dataobj: {
                 a: 1
-            }
+            },
+            a: {
+                n: 1
+            },
+            b: ""
         };
     },
     components: {},
-    created() {},
+    created() {
+        console.log(this.$appName);
+        console.log(this.$root.age);
+
+        this.b = this.a
+        this.a.x = this.a = {n: 2}
+    },
     mounted() {
-        
+
     },
     methods: {
         routerTo(item) {
@@ -48,6 +60,17 @@ export default {
             this.dataobj.a = 2
         }
     },
+    watch: {
+        a(newVal, oldVal) {
+            console.log('a旧值', oldVal);
+            console.log('a新值', newVal);
+            // console.log(this.a.x);
+        },
+        b(newVal, oldVal) {
+            console.log('b旧值', oldVal);
+            console.log('b新值', newVal);
+        }
+    }
 };
 </script>
 
