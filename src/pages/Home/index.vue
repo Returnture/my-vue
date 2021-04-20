@@ -28,6 +28,10 @@ export default {
                 { name: "Computed和watch的区别", to: "Computed" },
                 { name: "Key的作用", to: "Key" },
                 { name: "自定义全局组件-loading", to: "Loading" },
+                { name: "富文本编辑器", to: "TinyMCE" },
+                { name: "SVG用法", to: "SVG" },
+                { name: "Transition", to: "Transition" },
+                { name: "递归组件", to: "Recursion" },
             ],
             rawHtml: "<span>这是html</span>",
             dataobj: {
@@ -40,12 +44,19 @@ export default {
         };
     },
     components: {},
+    beforeRouteEnter(to, from, next) {
+        // console.log(this);
+        next(vm => {
+            console.log(vm);
+            // 通过 `vm` 访问组件实例
+        })
+    },
     created() {
-        console.log(this.$appName);
-        console.log(this.$root.age);
+        // console.log(this.$appName);
+        // console.log(this.$root.age);
 
         this.b = this.a
-        this.a.x = this.a = {n: 2}
+        this.a.x = this.a = { n: 2 }
     },
     mounted() {
 

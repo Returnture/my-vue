@@ -10,6 +10,7 @@ import toastRegistry from './components/Toast/index.js'
 Vue.use(toastRegistry)
 
 Vue.use(ElementUI);
+// console.log("process",process.env.npm_lifecycle_script);
 
 import swiper from 'vue-awesome-swiper'
 
@@ -27,6 +28,7 @@ Vue.prototype.$appName = "这是APP的名字";
 
 // console.log(Vue.config);
 /* eslint-disable no-new */
+console.log(store);
 new Vue({
     el: '#app',
     router: Router,

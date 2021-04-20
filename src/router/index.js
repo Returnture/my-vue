@@ -88,9 +88,32 @@ const router = new Router({
         path: '/Loading',
         name: 'Loading',
         component: () => import('@/pages/Loading')
+    },
+    {
+        path: '/TinyMCE',
+        name: 'TinyMCE',
+        component: () => import('@/pages/TinyMCE')
+    },
+    {
+        path: '/SVG',
+        name: 'SVG',
+        component: () => import('@/pages/SVG')
+    },
+    {
+        path: '/Transition',
+        name: 'Transition',
+        component: () => import('@/pages/Transition')
+    },
+    {
+        path: '/Recursion',
+        name: 'Recursion',
+        component: () => import('@/pages/Recursion')
     }
     ]
 })
+// router.beforeRouteEnter((to, from, next)=>{
+//     console.log(this);
+// })
 
 // router.beforeEach((to, from, next) => {
 //     if (to.path != "/login") {

@@ -1,11 +1,11 @@
 <template>
     <div class="Vuex">
-        {{$store.state.name}}
+        {{$store.state.info.name}}
         <el-button type="primary" @click="Edit()">修改Vuex的值</el-button>
         <el-button type="primary" @click="eventClick($event)">event</el-button>
         <div @click="eventClick($event)">event</div>
         <el-input type="text" v-model="parentValue"></el-input>
-        <ChildNode :parentValue.sync="parentValue"></ChildNode>
+        <!-- <ChildNode :parentValue.sync="parentValue"></ChildNode> -->
         <br>
         <!-- <input v-model.lazy="lazyValue" /> -->
         <!-- <input v-model.number="lazyValue" /> -->
@@ -17,6 +17,7 @@
 
 <script>
 import ChildNode from "./ChildNode";
+import { mutations } from "vuex";
 export default {
     data() {
         return {
@@ -29,7 +30,11 @@ export default {
     components: {
         ChildNode,
     },
+    computed: {
+        
+    },
     created() {
+        // console.log(mutations);
         console.log('------>>>', this.$store);
     },
     mounted() {
@@ -38,13 +43,19 @@ export default {
             console.log(111);
             window.removeEventListener('resize', this.handleChange)
         })
+        // console.log(...mutations);
+        this.init();
     },
     methods: {
+        // ...mutations(["initInfo","editInfo"]),
+        init() {
+            // this.initInfo({name:"hello world!"})
+        },
         handleChange() {
             console.log("窗口变化");
         },
         Edit() {
-            this.$store.commit("edit", "这是修改后的值");
+            this.$store.commit("editInfo", {name: "这是修改后的值"});
         },
         parentMethod() {
             console.log("获取父组件实例");
