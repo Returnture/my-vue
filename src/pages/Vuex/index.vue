@@ -12,12 +12,16 @@
         <input v-model.trim="lazyValue" />
         <!-- <el-input type="text" v-model.lazy="lazyValue"></el-input> -->
         {{lazyValue}}
+        <br>
+        <button @click="dec">-</button>
+        <span>{{count}}</span>
+        <button @click="add">+</button>
     </div>
 </template>
 
 <script>
 import ChildNode from "./ChildNode";
-import { mutations } from "vuex";
+import { mapState, mapMutations, mapActions } from "vuex";
 export default {
     data() {
         return {
@@ -31,31 +35,40 @@ export default {
         ChildNode,
     },
     computed: {
-        
+        ...mapState(["count"]),
     },
     created() {
-        // console.log(mutations);
-        console.log('------>>>', this.$store);
+
     },
     mounted() {
         window.addEventListener('resize', this.handleChange);
         this.$once('hook:beforeDestroy', () => {
-            console.log(111);
             window.removeEventListener('resize', this.handleChange)
         })
-        // console.log(...mutations);
         this.init();
     },
     methods: {
-        // ...mutations(["initInfo","editInfo"]),
+        ...mapActions(["incrementAsync", "decrementAsync"]),
+        ...mapMutations(["initInfo", "editInfo", "decrement", "increment"]),
+        add() {
+            this.incrementAsync().then(() => {
+                // console.log("执行次数");
+                // this.increment()
+            })
+        },
+        dec() {
+            this.decrementAsync().then(() => {
+                this.decrement()
+            })
+        },
         init() {
-            // this.initInfo({name:"hello world!"})
+            this.initInfo({ name: "hello world!" })
         },
         handleChange() {
             console.log("窗口变化");
         },
         Edit() {
-            this.$store.commit("editInfo", {name: "这是修改后的值"});
+            this.$store.commit("editInfo", { name: "这是修改后的值" });
         },
         parentMethod() {
             console.log("获取父组件实例");

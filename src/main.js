@@ -28,7 +28,6 @@ Vue.prototype.$appName = "这是APP的名字";
 
 // console.log(Vue.config);
 /* eslint-disable no-new */
-console.log(store);
 new Vue({
     el: '#app',
     router: Router,

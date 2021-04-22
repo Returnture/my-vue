@@ -32,6 +32,7 @@ export default {
                 { name: "SVG用法", to: "SVG" },
                 { name: "Transition", to: "Transition" },
                 { name: "递归组件", to: "Recursion" },
+                { name: "嵌套路由", to: "NestedRoute" },
             ],
             rawHtml: "<span>这是html</span>",
             dataobj: {

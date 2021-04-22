@@ -10,7 +10,8 @@ const vuexLocal = new VuexPersistence({
 })
 export default new Vuex.Store({
     state: {
-        info: {}
+        info: {},
+        count: 0
     },
     mutations: {
         initInfo(state, data) {
@@ -19,10 +20,31 @@ export default new Vuex.Store({
         editInfo(state, data) {
             state.info = data
             console.log(state);
+        },
+        increment(state) {
+            state.count++
+        },
+        decrement(state) {
+            state.count--
         }
     },
     actions: {
-
+        incrementAsync(context) {
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    context.commit('increment')
+                    resolve()
+                }, 1000)
+            })
+        },
+        decrementAsync(context) {
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    context.commit('decrement')
+                    resolve()
+                }, 1000)
+            })
+        }
     },
     modules: {
         MapStore,

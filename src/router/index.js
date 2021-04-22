@@ -108,7 +108,40 @@ const router = new Router({
         path: '/Recursion',
         name: 'Recursion',
         component: () => import('@/pages/Recursion')
-    }
+    },
+    {
+        path: '/NestedRoute',
+        name: 'NestedRoute',
+        component: () => import('@/pages/NestedRoute'),
+        children: [
+            {
+                path: '/',
+                name: 'item1',
+                component: () => import('@/pages/NestedRoute/item1')
+            },
+            {
+                path: '/NestedRoute/item2',
+                name: 'item2',
+                component: () => import('@/pages/NestedRoute/item2')
+            },
+            {
+                path: '/NestedRoute/item3',
+                name: 'item3',
+                component: () => import('@/pages/NestedRoute/item3')
+            },
+            {
+                path: '/NestedRoute/item4',
+                name: 'item4',
+                component: () => import('@/pages/NestedRoute/item4')
+            },
+            {
+                path: '/NestedRoute/item5',
+                name: 'item5',
+                component: () => import('@/pages/NestedRoute/item5')
+            },
+        ]
+    },
+
     ]
 })
 // router.beforeRouteEnter((to, from, next)=>{
