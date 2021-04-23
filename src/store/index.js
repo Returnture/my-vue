@@ -1,5 +1,6 @@
 import Vue from "vue"
 import Vuex from 'vuex'
+import MapStore from "@/store/MapStore"
 import VuexPersistence from 'vuex-persist'
 
 Vue.use(Vuex)
@@ -7,20 +8,46 @@ Vue.use(Vuex)
 const vuexLocal = new VuexPersistence({
     storage: window.localStorage
 })
-
-const store = new Vuex.Store({
+export default new Vuex.Store({
     state: {
-        name: 'Hello World!'
+        info: {},
+        count: 0
     },
     mutations: {
-        edit(state, data) {
-            state.name = data
+        initInfo(state, data) {
+            state.info = data
+        },
+        editInfo(state, data) {
+            state.info = data
+            console.log(state);
+        },
+        increment(state) {
+            state.count++
+        },
+        decrement(state) {
+            state.count--
         }
     },
     actions: {
-
+        incrementAsync(context) {
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    context.commit('increment')
+                    resolve()
+                }, 1000)
+            })
+        },
+        decrementAsync(context) {
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    context.commit('decrement')
+                    resolve()
+                }, 1000)
+            })
+        }
+    },
+    modules: {
+        MapStore,
     },
     plugins: [vuexLocal.plugin]
 })
-
-export default store
