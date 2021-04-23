@@ -13,83 +13,83 @@ import CheckBox from '@/pages/CheckBox'
 Vue.use(Router)
 
 const router = new Router({
-  // mode: 'history',
-  routes: [{
-      path: '/login',
-      name: 'login',
-      component: login
+    // mode: 'history',
+    routes: [{
+        path: '/login',
+        name: 'login',
+        component: login
     },
     {
-      path: '/Stop',
-      name: 'Stop',
-      component: Stop
+        path: '/Stop',
+        name: 'Stop',
+        component: Stop
     },
     {
-      path: '/',
-      name: 'Home',
-      component: Home
+        path: '/',
+        name: 'Home',
+        component: Home
     },
     {
-      path: '/Attrs',
-      name: 'Attrs',
-      component: Attrs
+        path: '/Attrs',
+        name: 'Attrs',
+        component: Attrs
     },
     {
-      path: '/Slot',
-      name: 'Slot',
-      component: Slot
+        path: '/Slot',
+        name: 'Slot',
+        component: Slot
     },
     {
-      path: '/Focus',
-      name: 'Focus',
-      component: Focus
+        path: '/Focus',
+        name: 'Focus',
+        component: Focus
     },
     {
-      path: '/Vuex',
-      name: 'Vuex',
-      component: Vuex
+        path: '/Vuex',
+        name: 'Vuex',
+        component: Vuex
     },
     {
-      path: '/Refs',
-      name: 'Refs',
-      component: Refs
+        path: '/Refs',
+        name: 'Refs',
+        component: Refs
     },
     {
-      path: '/CheckBox',
-      name: 'CheckBox',
-      component: CheckBox
+        path: '/CheckBox',
+        name: 'CheckBox',
+        component: CheckBox
     },
     {
-      path: '/ScriptStyle',
-      name: 'ScriptStyle',
-      component: () => import('@/pages/ScriptStyle')
+        path: '/ScriptStyle',
+        name: 'ScriptStyle',
+        component: () => import('@/pages/ScriptStyle')
     },
     {
-      path: '/Swiper',
-      name: 'Swiper',
-      component: () => import('@/pages/Swiper')
+        path: '/Swiper',
+        name: 'Swiper',
+        component: () => import('@/pages/Swiper')
     },
     {
-      path: '/Form',
-      name: 'Form',
-      component: () => import('@/pages/Form')
+        path: '/Form',
+        name: 'Form',
+        component: () => import('@/pages/Form')
     },
     {
-      path: '/CheckAll',
-      name: 'CheckAll',
-      component: () => import('@/pages/CheckAll')
+        path: '/CheckAll',
+        name: 'CheckAll',
+        component: () => import('@/pages/CheckAll')
     },
     {
-      path: '/Computed',
-      name: 'Computed',
-      component: () => import('@/pages/Computed')
+        path: '/Computed',
+        name: 'Computed',
+        component: () => import('@/pages/Computed')
     },
     {
-      path: '/Key',
-      name: 'Key',
-      component: () => import('@/pages/Key')
+        path: '/Key',
+        name: 'Key',
+        component: () => import('@/pages/Key')
     }
-  ]
+    ]
 })
 
 export default router

@@ -13,7 +13,7 @@ const store = new Vuex.Store({
         name: 'Hello World!'
     },
     mutations: {
-        edit(state, data){
+        edit(state, data) {
             state.name = data
         }
     },
