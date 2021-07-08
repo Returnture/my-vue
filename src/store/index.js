@@ -11,7 +11,10 @@ const vuexLocal = new VuexPersistence({
 export default new Vuex.Store({
     state: {
         info: {},
-        count: 0
+        count: 0,
+        nums: 0,
+        s_a: 0,
+        s_b: 0
     },
     mutations: {
         initInfo(state, data) {
@@ -26,6 +29,13 @@ export default new Vuex.Store({
         },
         decrement(state) {
             state.count--
+        },
+        getaandb(state, n) {
+            state.s_a = n.num1;
+            state.s_b = n.num2;
+        },
+        GetNums(state) {
+            state.nums = (state.s_a - 0) + (state.s_b - 0);
         }
     },
     actions: {

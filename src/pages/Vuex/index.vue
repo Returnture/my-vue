@@ -16,6 +16,11 @@
         <button @click="dec">-</button>
         <span>{{count}}</span>
         <button @click="add">+</button>
+        <br>
+        <el-input type="text" v-model="sum.num1" placeholder="" @blur="GetAandB"></el-input>+
+        <el-input type="text" v-model="sum.num2" placeholder="" @blur="GetAandB"></el-input>
+        <el-button type="primary" @click="GetTotal">求和</el-button>
+        <span>{{$store.state.nums}}</span>
     </div>
 </template>
 
@@ -28,7 +33,12 @@ export default {
             parentValue: "",
             $value: "这个会报错吗",
             value: "这个不会报错",
-            lazyValue: ""
+            lazyValue: "",
+            sum: {
+                num1: '',
+                num2: '',
+            },
+            total: ''
         };
     },
     components: {
@@ -48,8 +58,14 @@ export default {
         this.init();
     },
     methods: {
+        GetAandB() {
+            this.$store.commit("getaandb", this.sum)
+        },
+        GetTotal() {
+            this.$store.commit('GetNums');
+        },
         ...mapActions(["incrementAsync", "decrementAsync"]),
-        ...mapMutations(["initInfo", "editInfo", "decrement", "increment"]),
+        ...mapMutations(["initInfo", "editInfo", "decrement", "increment", "GetNums"]),
         add() {
             this.incrementAsync().then(() => {
                 // console.log("执行次数");
